@@ -2,10 +2,16 @@ import React from "react";
 
 const Voting = ({ post, onUpvote, onDownvote }) => {
   return (
-    <div className="flex flex-col items-center">
-      <i className="fas fa-arrow-up" onClick={() => onUpvote(post.id)} />
+    <div className="w-3 flex flex-col items-center text-gray-500">
+      <i
+        className="fas fa-arrow-up hover:text-orange-500"
+        onClick={() => onUpvote(post.id)}
+      />
       <div>{post.score}</div>
-      <i className="fas fa-arrow-down" onClick={() => onDownvote(post.id)} />
+      <i
+        className="fas fa-arrow-down hover:text-orange-500"
+        onClick={() => onDownvote(post.id)}
+      />
     </div>
   );
 };
