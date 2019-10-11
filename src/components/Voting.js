@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Voting = ({ votes, onAddVote, onRemoveVote }) => {
-  // const [upClicked, setUpClicked] = useState(false);
-  // const [downClicked, setDownClicked] = useState(false);
-
+const Voting = ({ post, onUpvote, onDownvote }) => {
   return (
     <div className="flex flex-col items-center">
-      <button className="border rounded" onClick={onAddVote}>
+      <button className="border rounded" onClick={() => onUpvote(post.id)}>
         Upvote
       </button>
-      Votes: {votes}
-      <button className="border rounded" onClick={onRemoveVote}>
+      {post.score}
+      <button className="border rounded" onClick={() => onDownvote(post.id)}>
         Downvote
       </button>
     </div>

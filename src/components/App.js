@@ -4,17 +4,20 @@ import RedditListing from "./RedditListing";
 
 function App() {
   const [posts, setPosts] = useState({});
-  useEffect(async () => {
-    const result = await axios.get(`https://www.reddit.com/r/reactjs.json`);
-    processPosts(result);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get(`https://www.reddit.com/r/reactjs.json`);
+      processPosts(result.data.data.children);
+    };
+    fetchData();
   }, []);
 
   const processPosts = posts => {
     let postsHash = posts.reduce((hash, post) => {
-      hash[post.id] = post.data;
+      hash[post.data.id] = post.data;
       return hash;
     }, {});
-
     setPosts(postsHash);
   };
 

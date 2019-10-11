@@ -1,22 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Voting from "./Voting";
 
-const RedditPost = ({ post }) => {
-  const [votes, setVotes] = useState(0);
-
-  const addVote = () => {
-    setVotes(votes + 1);
-  };
-
-  const removeVote = () => {
-    setVotes(votes - 1);
-  };
-
+const RedditPost = ({ post, onUpvote, onDownvote }) => {
   return (
     <div className="flex">
-      <Voting votes={votes} onAddVote={addVote} onRemoveVote={removeVote} />
-      <a href={post.data.url} className="ml-5 border">
-        {post.data.title}
+      <Voting post={post} onUpvote={onUpvote} onDownvote={onDownvote} />
+      <a href={post.url} className="ml-5 border">
+        {post.title}
       </a>
     </div>
   );
