@@ -7,7 +7,7 @@ const Voting = ({ post, onUpvote, onDownvote }) => {
         className="fas fa-arrow-up hover:text-orange-500"
         onClick={() => onUpvote(post.id)}
       />
-      <div>{post.score}</div>
+      <div className="my-1">{post.score}</div>
       <i
         className="fas fa-arrow-down hover:text-orange-500"
         onClick={() => onDownvote(post.id)}

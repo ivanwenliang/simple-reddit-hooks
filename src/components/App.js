@@ -44,8 +44,8 @@ function App() {
   let formattedPosts = Object.keys(posts).map(id => posts[id]);
 
   return (
-    <div className="w-full h-screen bg-gray-300">
-      <h1 className="font-semibold text-5xl">Reddit</h1>
+    <div>
+      <h1 className="font-semibold text-5xl text-center">Simple Reddit</h1>
       <RedditListing
         posts={formattedPosts}
         onUpvote={handleUpvote}
