@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Voting = ({ post }) => {
-  return <div>Votes: {post.data.score}</div>;
+const Voting = ({ votes, onAddVote, onRemoveVote }) => {
+  // const [upClicked, setUpClicked] = useState(false);
+  // const [downClicked, setDownClicked] = useState(false);
+
+  return (
+    <div>
+      <button onClick={onAddVote}>Upvote</button>
+      Votes: {votes}
+      <button onClick={onRemoveVote}>Downvote</button>
+    </div>
+  );
 };
 
 export default Voting;
