@@ -5,13 +5,15 @@ const RedditListing = ({ posts }) => {
   return (
     <div className="py-1 px-2 mx-3 bg-gray-100 rounded">
       <ul>
-        {posts.map(post => {
-          return (
-            <li>
-              <RedditPost post={post} />
-            </li>
-          );
-        })}
+        {posts
+          .sort((p1, p2) => p2.score - p1.score)
+          .map(post => {
+            return (
+              <li key={post.id}>
+                <RedditPost post={post} />
+              </li>
+            );
+          })}
       </ul>
     </div>
   );

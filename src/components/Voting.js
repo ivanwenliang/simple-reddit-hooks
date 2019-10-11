@@ -5,10 +5,14 @@ const Voting = ({ votes, onAddVote, onRemoveVote }) => {
   // const [downClicked, setDownClicked] = useState(false);
 
   return (
-    <div>
-      <button onClick={onAddVote}>Upvote</button>
+    <div className="flex flex-col items-center">
+      <button className="border rounded" onClick={onAddVote}>
+        Upvote
+      </button>
       Votes: {votes}
-      <button onClick={onRemoveVote}>Downvote</button>
+      <button className="border rounded" onClick={onRemoveVote}>
+        Downvote
+      </button>
     </div>
   );
 };
