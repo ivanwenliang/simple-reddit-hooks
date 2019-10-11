@@ -3,13 +3,9 @@ import React from "react";
 const Voting = ({ post, onUpvote, onDownvote }) => {
   return (
     <div className="flex flex-col items-center">
-      <button className="border rounded" onClick={() => onUpvote(post.id)}>
-        Upvote
-      </button>
-      {post.score}
-      <button className="border rounded" onClick={() => onDownvote(post.id)}>
-        Downvote
-      </button>
+      <i className="fas fa-arrow-up" onClick={() => onUpvote(post.id)} />
+      <div>{post.score}</div>
+      <i className="fas fa-arrow-down" onClick={() => onDownvote(post.id)} />
     </div>
   );
 };
