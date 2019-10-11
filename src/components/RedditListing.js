@@ -3,7 +3,7 @@ import RedditPost from "./RedditPost";
 
 const RedditListing = ({ posts }) => {
   return (
-    <div>
+    <div className="py-1 px-2 mx-3 bg-gray-100 rounded">
       <ul>
         {posts.map(post => {
           return (

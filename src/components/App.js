@@ -4,8 +4,8 @@ import { posts } from "../static-data";
 
 function App() {
   return (
-    <div>
-      <h1>Reddit</h1>
+    <div className="w-full h-screen bg-gray-300">
+      <h1 className="font-semibold text-5xl">Reddit</h1>
       <RedditListing posts={posts.data.children} />
     </div>
   );
